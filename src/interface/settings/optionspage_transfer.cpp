@@ -49,8 +49,8 @@ bool COptionsPageTransfer::CreateControls(wxWindow* parent)
 		auto [box, inner] = lay.createStatBox(main, _("Concurrent transfers"), 3);
 		inner->Add(new wxStaticText(box, nullID, _("Maximum simultaneous &transfers:")), lay.valign);
 		impl_->transfers_ = new wxSpinCtrlEx(box, nullID, wxString(), wxDefaultPosition, wxSize(lay.dlgUnits(26), -1));
-		impl_->transfers_->SetRange(1, 10);
-		impl_->transfers_->SetMaxLength(2);
+		impl_->transfers_->SetRange(1, 999);
+		impl_->transfers_->SetMaxLength(3);
 		inner->Add(impl_->transfers_, lay.valign);
 		inner->Add(new wxStaticText(box, nullID, _("(1-10)")), lay.valign);
 		inner->Add(new wxStaticText(box, nullID, _("Limit for concurrent &downloads:")), lay.valign);
